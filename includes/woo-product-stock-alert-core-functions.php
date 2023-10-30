@@ -523,13 +523,13 @@ if (!function_exists('mvx_stockalert_admin_tabs')) {
 					],
                     [
 						'key'    => 'is_enable_no_interest',
-						'label'   => __( "Enable No. of Interest on Product Page", 'woocommerce-product-stock-alert' ),
+						'label'   => __( "Showcase Subscriber Count for Out of Stock Items", 'woocommerce-product-stock-alert' ),
 						'class'     => 'mvx-toggle-checkbox',
 						'type'    => 'checkbox',
 						'options' => array(
 								array(
 									'key'=> "is_enable_no_interest",
-									'label'=>  __('How many person shown interest or subscribed for the product.', 'woocommerce-product-stock-alert' ),
+									'label'=>  __('Enabling this setting shows the subscriber count on the single product page..', 'woocommerce-product-stock-alert' ),
 									'value'=> "is_enable_no_interest"
 								),
 						),
@@ -540,13 +540,13 @@ if (!function_exists('mvx_stockalert_admin_tabs')) {
                         'type'      => 'textarea',
                         'class'     =>  'mvx-setting-wpeditor-class',
                         'depend_checkbox'   => 'is_enable_no_interest',
-                        'label'     => __( 'Edit Shown Interest Text', 'woocommerce-product-stock-alert' ),
-                        'desc'      => __('Enter the text which you want to display as shown interest text<br>Hint: Use %no_of_subscribed% as number of interest/subscribed persons', 'woocommerce-product-stock-alert'),
+                        'label'     => __( 'Subscriber Count Notification Message', 'woocommerce-product-stock-alert' ),
+                        'desc'      => __('Personalize the notification text to let users know about the quantity of subscribers for out-of-stock item. Note: Use %no_of_subscribed% as number of interest/subscribed persons.', 'woocommerce-product-stock-alert', 'woocommerce-product-stock-alert'),
                         'database_value' => '',
                     ],
                     [
 						'key'    => 'is_double_optin',
-						'label'   => __( "Double Opt-in", 'woocommerce-product-stock-alert' ),
+						'label'   => __( "Subscriber Double Opt-in", 'woocommerce-product-stock-alert' ),
 						'class'     => 'mvx-toggle-checkbox',
 						'type'    => 'checkbox',
                         'props'     => array(
@@ -687,9 +687,9 @@ if (!function_exists('mvx_stockalert_admin_tabs')) {
 				]
 			),
             'form_submission' => array(
-				'tablabel'        =>  __('Form Submission', 'woocommerce-product-stock-alert'),
+				'tablabel'        =>  __('Post-Form Submission Messages ', 'woocommerce-product-stock-alert'),
 				'apiurl'          =>  'save_stockalert',
-				'description'     =>  __('Configure form submission settings. ', 'woocommerce-product-stock-alert'),
+				'description'     =>  __('Customize message that appears after user submits the form.', 'woocommerce-product-stock-alert'),
 				'icon'            =>  'icon-form-submission',
 				'submenu'         =>  'settings',
 				'modulename'      =>  [
@@ -697,7 +697,7 @@ if (!function_exists('mvx_stockalert_admin_tabs')) {
                         'key'       => 'alert_success',
                         'type'      => 'textarea',
                         'class'     =>  'mvx-setting-wpeditor-class',
-                        'desc'      => __('Hint: Use %product_title% as product title and %customer_email% as customer email.<br/> Example: Thank you for your interest in %product_title%, you will receive an email alert when it becomes available.', 'woocommerce-product-stock-alert'),
+                        'desc'      => __('Tip: You can insert %product_title% for the product title and %customer_email% for the customers email. <br/> Example:Thank you for expressing interest in %product_title%. We will notify you via email once it is back in stock.', 'woocommerce-product-stock-alert'),
                         'label'     => __( 'Edit Alert Text When Form Submitted Successfully', 'woocommerce-product-stock-alert' ),
                         'database_value' => '',
                     ],
@@ -705,8 +705,8 @@ if (!function_exists('mvx_stockalert_admin_tabs')) {
                         'key'       => 'alert_email_exist',
                         'type'      => 'textarea',
                         'class'     =>  'mvx-setting-wpeditor-class',
-                        'desc'      => __( 'Hint: Use %product_title% as product title and %customer_email% as customer email.<br/> Example: %customer_email% is already registered with %product_title%. Please try again.', 'woocommerce-product-stock-alert' ),
-                        'label'     => __( 'Edit Alert Text When Email is Already Submitted', 'woocommerce-product-stock-alert' ),
+                        'desc'      => __( 'Tip: You can utilize %product_title% as the product title and %customer_email% as the customers email.<br/> Example: %customer_email% is already registered for %product_title%. Please attempt a different email address.', 'woocommerce-product-stock-alert' ),
+                        'label'     => __( 'Message for Existing Email Subscribers', 'woocommerce-product-stock-alert' ),
                         'database_value' => '',
                     ],
                     [
@@ -714,7 +714,7 @@ if (!function_exists('mvx_stockalert_admin_tabs')) {
                         'type'      => 'textarea',
                         'class'     =>  'mvx-setting-wpeditor-class',
                         'desc'      => __('Default: Please enter a valid email id and try again.', 'woocommerce-product-stock-alert' ),
-                        'label'     => __( 'Edit Alert Text For Valid Email Check', 'woocommerce-product-stock-alert' ),
+                        'label'     => __( 'Invalid Email Address', 'woocommerce-product-stock-alert' ),
                         'database_value' => '',
                     ],
                     [
@@ -722,7 +722,7 @@ if (!function_exists('mvx_stockalert_admin_tabs')) {
                         'type'      => 'textarea',
                         'class'     =>  'mvx-setting-wpeditor-class',
                         'desc'      => __( 'Default: %customer_email% is successfully unregistered.', 'woocommerce-product-stock-alert' ),
-                        'label'     => __( 'Edit Alert Text For Successful Unsubscribe', 'woocommerce-product-stock-alert' ),
+                        'label'     => __( 'Unsubscription Confirm.', 'woocommerce-product-stock-alert' ),
                         'database_value' => '',
                     ],
 				]
